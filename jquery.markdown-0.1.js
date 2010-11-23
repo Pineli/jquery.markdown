@@ -9,7 +9,7 @@
 // Copyright (c) 2005 Sam Angove - this JavaScript port
 // <http://rephrase.net/box/js-markdown/>
 //
-// Copyright (c) 2010 Sam Angove - Adding to jQuery
+// Copyright (c) 2010 Ben Sekulowicz-Barclay - Adding to jQuery
 // <https://github.com/beseku/jquery.markdown/>
 //
 // Most of this was ported directly from the Perl version, with
