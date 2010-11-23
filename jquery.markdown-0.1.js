@@ -605,7 +605,7 @@
 			return tokens;
 		}
 		
-		this.each(function(i, e) {
+		return this.each(function(i, e) {
 			var $e = $(e);
 			$e.html(Markdown($e.text()));
 		});
