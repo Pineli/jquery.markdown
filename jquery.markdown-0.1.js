@@ -1,4 +1,4 @@
-// Markdown  -  A text-to-HTML conversion tool for web writers
+// jQuery.Markdown v0.1  -  A text-to-HTML conversion tool for web writers
 //
 // Copyright (c) 2005 John Gruber  
 // <http://daringfireball.net/projects/markdown/>
@@ -13,22 +13,13 @@
 // <https://github.com/beseku/jquery.markdown/>
 //
 // Most of this was ported directly from the Perl version, with
-// the PHP used as a reference. All credit goes to John and Michel.
-//
-//
-// (Except for the bugs I introduced -- they're all mine.)
-//
-//				Version 1.01b4, 2005.01.06
-// 				Based on Markdown v1.01 
-//
-// 1.01 b2: mostly working, announce on markdown-discuss
-// 1.01 b3: fix stupid HTML comments bug (I want to save $2, not $1...)
-//			remove extra newlines in blockquotes (Symptom, I think, not problem.)
-// 1.01 b4: kludge: add an extra newline in DoLists, fixes a whitespace error
-
+// the PHP used as a reference. All credit goes to John and Michel and Sam.
+// 
+// 0.2: Added markdown function for formatting text wthout HTML elements.
+// 0.1: Incorporated Markdown-1.01b2.js. Initial release.
 
 (function($){
-	$.fn.markdown = function() {
+	$.markdown = function(makeMeHtmlPlease) {
 		md_empty_element_suffix = " />";
 		md_tab_width = 4;
 		md_tab_width = 4;
@@ -608,9 +599,13 @@
 			return tokens;
 		}
 		
+		return Markdown(makeMeHtmlPlease);
+	};
+	
+	$.fn.markdown = function() {
 		return this.each(function(i, e) {
 			var $e = $(e);
-			$e.html(Markdown($e.text()));
+			$e.html($.markdown($e.text()));
 		});
 	};
 })(jQuery);
